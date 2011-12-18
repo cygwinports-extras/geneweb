@@ -1,0 +1,16 @@
+
+HOMEPAGE="http://opensource.geneanet.org/projects/geneweb"
+SRC_URI="http://opensource.geneanet.org/attachments/download/131/gw-${PV}-src.tgz"
+SRC_DIR="distrib-${PV//./-}"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cp -f tools/Makefile.inc{.unix,}
+	cygmake -j1
+}
+
+src_install() {
+	cd ${B}
+	cygmake install PREFIX=${D}/usr
+}
