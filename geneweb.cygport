@@ -1,0 +1,25 @@
+NAME="geneweb"
+VERSION=6.03
+RELEASE=1
+CATEGORY="Science"
+SUMMARY="Genealogical program with web interface"
+DESCRIPTION="GeneWeb is a genealogy software with a web interface created by
+Daniel de Rauglaudre. It can be installed locally on a stand-alone machine and
+on any web server. It comes with an efficient relationship and consanguinity
+calculator developed in collaboration with Didier Remy, Research Director at
+INRIA."
+HOMEPAGE="http://opensource.geneanet.org/projects/geneweb"
+SRC_URI="http://opensource.geneanet.org/attachments/download/131/gw-${VERSION}-src.tgz"
+SRC_DIR="distrib-${VERSION//./-}"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cp -f tools/Makefile.inc{.unix,}
+	cygmake -j1
+}
+
+src_install() {
+	cd ${B}
+	cygmake install PREFIX=${D}/usr
+}

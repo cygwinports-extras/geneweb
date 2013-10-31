@@ -1,8 +1,0 @@
-category: Science
-requires:
-sdesc: "Genealogical program with web interface"
-ldesc: "GeneWeb is a genealogy software with a web interface created by 
-Daniel de Rauglaudre. It can be installed locally on a stand-alone 
-machine and on any web server. It comes with an efficient relationship 
-and consanguinity calculator developed in collaboration with Didier 
-Remy, Research Director at INRIA."
